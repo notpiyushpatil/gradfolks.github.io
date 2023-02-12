@@ -565,6 +565,62 @@ section {
   color: #2a2c39;
 }
 
+  /*--------------------------------------------------------------
+# Slider section
+--------------------------------------------------------------*/
+
+
+/* Animation */
+@keyframes scroll {
+	0% { transform: translateX(0); }
+	100% { transform: translateX(calc(-250px * 7))}
+}
+
+
+/* // Styling */
+.slider {
+	background: white;
+	box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);
+	height: 100px;
+	margin: auto;
+	overflow:hidden;
+	position: relative;
+	width: 100%;
+}
+	
+	.slider:before,
+	:after {
+		/* @include white-gradient; */
+		content: "";
+		height: 100px;
+		position: absolute;
+		width: 200px;
+		z-index: 2;
+	}
+	
+	.slider::after {
+		right: 0;
+		top: 0;
+		transform: rotateZ(180deg);
+	}
+
+	.slider:before {
+		left: 0;
+		top: 0;
+	}
+	
+	.slide-track {
+		animation: scroll 30s linear infinite;
+    animation-delay: 1s;
+		display : flex;
+		width: calc(250px * 14);
+  }
+	
+	.slide {
+		height: 100px;
+		width: 100%;
+	}
+
 /*--------------------------------------------------------------
 # About
 --------------------------------------------------------------*/
